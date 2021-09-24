@@ -11,13 +11,11 @@ public final class PointOperator {
     }
 
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
-        final Double[] vector2 = new Double[vector.length];
+        Double[] vector2 = vector.clone();
         for (int i = 0; i < vector.length; i++) {
-            vector2[i] = vector[i];
-        }
-        for (int i = 0; i < vector.length; i++) {
+            vector[i] = 0.0;
             for (int j = 0; j < rotationMatrix[i].length; j++) {
-                vector[i] = vector2[j] * rotationMatrix[i][j];
+                vector[i] += vector2[j] * rotationMatrix[i][j];
             }
         }
     }
