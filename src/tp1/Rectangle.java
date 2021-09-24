@@ -7,11 +7,11 @@ public class Rectangle extends BaseShape {
     // TODO creer un rectangle avec une largeur et une longueur.
     public Rectangle(Double width, Double height) {
         super(new ArrayList());
-        final double largeur = -width / 2.0;
-        final double hauteur = -height / 2.0;
-        for (double i = largeur; i < -1.0 * largeur; ++i) {
-            for (double j = hauteur; j < -1.0 * hauteur; ++j) {
-                super.add(new Point2d(i, j));
+        double largeur = width / 2;
+        double hauteur = height / 2;
+        for (double i = -largeur; i < largeur; i++) {
+            for (double j = -hauteur; j < hauteur; j++) {
+                add(new Point2d(i, j));
             }
         }
     }

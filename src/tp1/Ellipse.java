@@ -7,14 +7,14 @@ public class Ellipse extends BaseShape {
     // TODO creer une ellipse avec une largeur et une longueur.
     public Ellipse(Double widthRadius, Double heightRadius) {
         super(new ArrayList());
-        final double largeur = -widthRadius / 2.0;
-        final double hauteur = -heightRadius / 2.0;
-        for (double i = largeur; i < -1.0 * largeur; ++i) {
-            for (double j = hauteur; j < -1.0 * hauteur; ++j) {
-                final double evolutionX = Math.pow(i, 2.0) / Math.pow(largeur, 2.0);
-                final double evolutionY = Math.pow(j, 2.0) / Math.pow(hauteur, 2.0);
-                final double Xy = evolutionX + evolutionY;
-                if (Xy <= 1.0) {
+        double rayonHorizontal = widthRadius / 2;
+        double rayonVertical = heightRadius / 2;
+        for (double i = -rayonHorizontal; i < rayonHorizontal; i++) {
+            for (double j = -rayonVertical; j < rayonVertical; j++) {
+                double largeur = (i * i) / (rayonHorizontal * rayonHorizontal);
+                double hauteur = (j * j) / (rayonVertical * rayonVertical);
+                double addition = largeur + hauteur;
+                if (addition <= 1.0) {
                     this.add(new Point2d(i, j));
                 }
             }
