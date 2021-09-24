@@ -9,6 +9,8 @@ public final class LetterFactory {
     final static Double halfMaxWidth = maxWidth / 2;
     final static Double stripeThickness = maxHeight / 8;
     final static Double halfStripeThickness = stripeThickness / 2;
+    final static Double angleDuV = Math.toRadians(9);
+    final static Double deplacementDuV = halfMaxWidth/2.5;
 
     public static BaseShape create_e() {
         Ellipse contour = new Ellipse(maxWidth, maxHeight);
@@ -44,8 +46,8 @@ public final class LetterFactory {
     }
 
     public static BaseShape create_V() {
-        Rectangle barreDroite = new Rectangle(halfStripeThickness , maxHeight).rotate(Math.toRadians(9)).translate(new Point2d(-halfMaxWidth/2.5,0.0));
-        Rectangle barreGauche = new Rectangle(halfStripeThickness , maxHeight).rotate(-Math.toRadians(9)).translate(new Point2d(halfMaxWidth/2.5,0.0));
+        Rectangle barreDroite = new Rectangle(halfStripeThickness , maxHeight).rotate(angleDuV).translate(new Point2d(-deplacementDuV,0.0));
+        Rectangle barreGauche = new Rectangle(halfStripeThickness , maxHeight).rotate(-angleDuV).translate(new Point2d(deplacementDuV,0.0));
         barreDroite.add(barreGauche);
         return barreDroite;
     }
