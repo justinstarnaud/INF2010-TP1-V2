@@ -6,9 +6,7 @@ import java.util.stream.Collectors;
 public abstract class AbstractPoint implements Comparable<AbstractPoint> {
     protected Double[] vector;
 
-    public AbstractPoint(Double[] vector) {
-        this.vector = vector;
-    }
+    public AbstractPoint(Double[] vector) { this.vector = vector.clone(); }
 
     public abstract AbstractPoint translate(Double[] translateVector);
     public abstract AbstractPoint rotate(Double[][] rotationMatrix);

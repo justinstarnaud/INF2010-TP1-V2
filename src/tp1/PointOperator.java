@@ -1,7 +1,5 @@
 package tp1;
 
-import java.util.*;
-
 public final class PointOperator {
 
     public static void translate(Double[] vector, Double[] translateVector) {
@@ -26,20 +24,20 @@ public final class PointOperator {
     }
 
     public static void divide(Double[] vector, Double divider) {
-        for (double vec: vector) {
-            vec /= divider;
+        for (int i = 0; i < vector.length; ++i) {
+            vector[i] /= divider;
         }
     }
 
     public static void multiply(Double[] vector, Double multiplier) {
-        for (double vec: vector) {
-            vec *= multiplier;
+        for (int i = 0; i < vector.length; ++i) {
+            vector[i] *= multiplier;
         }
     }
 
     public static void add(Double[] vector, Double adder) {
-        for (double vec: vector) {
-            vec += adder;
+        for (int i = 0; i < vector.length; ++i) {
+            vector[i] += adder;
         }
     }
 }

@@ -1,7 +1,5 @@
 package tp1;
 
-import org.w3c.dom.css.Rect;
-
 public final class LetterFactory {
     final static Double maxHeight = 200.0;
     final static Double maxWidth = maxHeight / 2.5;
@@ -46,8 +44,8 @@ public final class LetterFactory {
     }
 
     public static BaseShape create_V() {
-        Rectangle barreDroite = new Rectangle(halfStripeThickness , maxHeight).rotate(angleDuV).translate(new Point2d(-deplacementDuV,0.0));
-        Rectangle barreGauche = new Rectangle(halfStripeThickness , maxHeight).rotate(-angleDuV).translate(new Point2d(deplacementDuV,0.0));
+        Rectangle barreDroite = new Rectangle(halfStripeThickness , maxHeight).rotate(-angleDuV).translate(new Point2d(-deplacementDuV,0.0));
+        Rectangle barreGauche = new Rectangle(halfStripeThickness , maxHeight).rotate(angleDuV).translate(new Point2d(deplacementDuV,0.0));
         barreDroite.add(barreGauche);
         return barreDroite;
     }

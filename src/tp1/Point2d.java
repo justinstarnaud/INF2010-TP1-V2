@@ -35,7 +35,9 @@ public class Point2d extends AbstractPoint {
     }
 
     public Point2d rotate(Double angle) {
-        PointOperator.rotate(this.vector, angle);
+        Double elemPointX = this.vector[this.X];
+        this.vector[this.X] = this.X() * Math.cos(angle) - this.Y() * Math.sin(angle);
+        this.vector[this.Y] = elemPointX * Math.sin(angle) + this.Y() * Math.cos(angle);
         return this;
     }
 
